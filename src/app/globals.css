@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  min-height: 100vh;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-manrope), sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 48 23.81% 95.88%;
+    --foreground: 215.68 44.58% 16.27%;
+    --card: 48 23.81% 95.88%;
+    --card-foreground: 215.68 44.58% 16.27%;
+    --popover: 48 23.81% 95.88%;
+    --popover-foreground: 215.68 44.58% 16.27%;
+    --primary: 215.68 44.58% 16.27%;
+    --primary-foreground: 48 23.81% 95.88%;
+    --secondary: 45 18% 92%;
+    --secondary-foreground: 215 46% 16%;
+    --muted: 45 18% 92%;
+    --muted-foreground: 215 18% 42%;
+    --accent: 40.23 42.31% 59.22%;
+    --accent-foreground: 215.68 44.58% 16.27%;
+    --destructive: 215.68 44.58% 16.27%;
+    --destructive-foreground: 48 23.81% 95.88%;
+    --border: 215 18% 82%;
+    --input: 215 18% 82%;
+    --ring: 40.23 42.31% 59.22%;
+    --chart-1: 215.68 44.58% 16.27%;
+    --chart-2: 215 30% 32%;
+    --chart-3: 40.23 42.31% 59.22%;
+    --chart-4: 41 30% 73%;
+    --chart-5: 215 18% 52%;
+    --radius: 12px;
+  }
+  .dark {
+    --background: 48 23.81% 95.88%;
+    --foreground: 215.68 44.58% 16.27%;
+    --card: 48 23.81% 95.88%;
+    --card-foreground: 215.68 44.58% 16.27%;
+    --popover: 48 23.81% 95.88%;
+    --popover-foreground: 215.68 44.58% 16.27%;
+    --primary: 215.68 44.58% 16.27%;
+    --primary-foreground: 48 23.81% 95.88%;
+    --secondary: 45 18% 92%;
+    --secondary-foreground: 215 46% 16%;
+    --muted: 45 18% 92%;
+    --muted-foreground: 215 18% 42%;
+    --accent: 40.23 42.31% 59.22%;
+    --accent-foreground: 215.68 44.58% 16.27%;
+    --destructive: 215.68 44.58% 16.27%;
+    --destructive-foreground: 48 23.81% 95.88%;
+    --border: 215 18% 82%;
+    --input: 215 18% 82%;
+    --ring: 40.23 42.31% 59.22%;
+    --chart-1: 215.68 44.58% 16.27%;
+    --chart-2: 215 30% 32%;
+    --chart-3: 40.23 42.31% 59.22%;
+    --chart-4: 41 30% 73%;
+    --chart-5: 215 18% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+::selection {
+  color: #F7F6F2;
+  background: hsl(var(--primary));
+}
