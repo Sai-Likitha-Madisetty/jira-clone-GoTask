@@ -24,8 +24,16 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+import { PlusIcon } from "lucide-react";
+import { InviteWorkspaceModal } from "./invite-workspace-modal";
+import { useGetWorkspace } from "../api/use-get-workspace";
+import { useState } from "react";
+
 export const MembersList = () => {
   const workspaceId = useWorkspaceId();
+  const [isInviteModalOpen, setIsInviteModalOpen] = useState(false);
+  const { data: workspace, isLoading: isWorkspaceLoading } =
+  useGetWorkspace({ workspaceId }); 
   const [ConfirmDialog, confirm] = useConfirm(
     "Remove member",
     "This member will be removed from the workspace",
@@ -63,6 +71,13 @@ export const MembersList = () => {
   return (
     <Card className="w-full rounded-xl border border-navy/10 bg-ivory shadow-sm shadow-navy/[0.025]">
       <ConfirmDialog />
+      {workspace && (
+      <InviteWorkspaceModal
+        workspace={workspace}
+        open={isInviteModalOpen}
+        onOpenChange={setIsInviteModalOpen}
+      />
+    )}
       <CardHeader className="flex flex-row items-center gap-x-4 p-7 space-y-0">
         <Button asChild variant="secondary" size="sm">
           <Link href={`/workspaces/${workspaceId}`}>
@@ -74,6 +89,14 @@ export const MembersList = () => {
           Members list
         </CardTitle>
       </CardHeader>
+      <Button
+        className="ml-auto"
+        size="sm"
+        onClick={() => setIsInviteModalOpen(true)}
+        disabled={isWorkspaceLoading || !workspace}>
+        <PlusIcon className="mr-2 size-4" />
+        Invite Members
+      </Button>
       <div className="px-7">
         <DottedSeparator />
       </div>
