@@ -364,6 +364,5 @@ If **GoTask** caught your attention, consider giving this repository a star.
 
 Every star helps this project reach more developers.
 
-**Plan clearly. Collaborate effectively. Ship faster.**
 
 </div>
