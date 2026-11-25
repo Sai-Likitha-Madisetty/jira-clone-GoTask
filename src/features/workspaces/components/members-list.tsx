@@ -79,24 +79,27 @@ export const MembersList = () => {
       />
     )}
       <CardHeader className="flex flex-row items-center gap-x-4 p-7 space-y-0">
-        <Button asChild variant="secondary" size="sm">
-          <Link href={`/workspaces/${workspaceId}`}>
-            <ArrowLeftIcon className="size-4 mr-2" />
-            Back
-          </Link>
-        </Button>
-        <CardTitle className="font-display text-xl font-bold text-navy">
-          Members list
-        </CardTitle>
-      </CardHeader>
-      <Button
-        className="ml-auto"
-        size="sm"
-        onClick={() => setIsInviteModalOpen(true)}
-        disabled={isWorkspaceLoading || !workspace}>
-        <PlusIcon className="mr-2 size-4" />
-        Invite Members
-      </Button>
+  <Button asChild variant="secondary" size="sm">
+    <Link href={`/workspaces/${workspaceId}`}>
+      <ArrowLeftIcon className="size-4 mr-2" />
+      Back
+    </Link>
+  </Button>
+
+  <CardTitle className="font-display text-xl font-bold text-navy">
+    Members list
+  </CardTitle>
+
+  <Button
+    className="ml-auto"
+    size="sm"
+    onClick={() => setIsInviteModalOpen(true)}
+    disabled={isWorkspaceLoading || !workspace}
+  >
+    <PlusIcon className="mr-2 size-4" />
+    Invite Members
+  </Button>
+</CardHeader>
       <div className="px-7">
         <DottedSeparator />
       </div>
